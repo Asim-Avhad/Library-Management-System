@@ -1,0 +1,228 @@
+<!DOCTYPE html>   
+<%- include("partials/header.ejs") %>
+<html lang="en">   
+<head>   
+<meta charset="utf-8">   
+<title>Final Output</title>   
+<meta name="description" content="Bootstrap.">  
+<link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css"></style>
+<script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>  
+<body style="margin:20px auto">  
+<div class="container">
+<div class="row header" style="text-align:center;color:green">
+  <% if (type==="books") { %>
+    <h3>BOOKS ON RETURN </h3>
+    </div>
+    <table id="myTable" class="table table-striped" >  
+    <thead>
+          <tr>
+            <th scope="col">Borrower Name</th>
+            <th scope="col">Book ID</th>
+            <th scope="col">Book Name</th>
+            <th scope="col">Issue Date</th>
+            <th scope="col">Return Date</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% books.forEach(book => { %>
+           <tr>  
+          <td><%= book.student.name %></td>  
+          <td><%= book.material.material_id %></td>  
+          <td><%= book.material.material_name %></td> 
+          <td><%= book.issue_date %></td>  
+          <td><%= book.return_date %></td>  
+            
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+     <% }  
+      
+      else if(type==="magazines") {  %>
+        <h3>MAGAZINES ON RETURN </h3>
+    </div>
+    <table id="myTable" class="table table-striped" >  
+
+        <thead>
+        <tr>
+          <th scope="col">Magazine Id</th>
+          <th scope="col">Magazine Name</th>
+          <th scope="col">Magazine Author</th>
+          <th scope="col">Magazine Price</th>
+          <th scope="col">Quantity</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% magazines.forEach(magazine => { %>
+           <tr>  
+            <td><%= magazine.student.name %></td>  
+          <td><%= magazine.material.material_id %></td>  
+          <td><%= magazine.material.material_name %></td> 
+          <td><%= magazine.issue_date %></td>  
+          <td><%= magazine.return_date %></td>  
+            
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+      <% }
+
+       else if (type==="all") { %>
+    <h3>RECENT LOGS </h3>
+    </div>
+    <table id="myTable" class="table table-striped" >  
+    <thead>
+          <tr>
+            <th scope="col">Collection Name</th>
+            <th scope="col">Collection ID</th>
+            <th scope="col">Collection Type</th>
+            <th scope="col">Issue On</th>
+            <th scope="col">Will Return </th>
+            <th scope="col">Status </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% allhistory.forEach(collection => { %>
+           <tr>  
+          <td><%= collection.material.material_name %></td>  
+          <td><%= collection.material.material_id %></td>  
+          <td><%= collection.material.material_type %></td> 
+          <td><%= collection.issue_date %></td>  
+          <td><%= collection.return_date %></td>  
+          <td><%= collection.action %></td>  
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+     <% }  
+     else if (type==="students") { %>
+    <h3>STUDENTS DATABASE </h3>
+    </div>
+  //   name:String,
+  // class:String,
+  // crn:Number,
+  // mob:String,
+  // fine:Number,
+  // maxbook:Number,
+  // recent_books:Array
+    <table id="myTable" class="table table-striped" >  
+    <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Class</th>
+            <th scope="col">Mobile No.</th>
+            <th scope="col">Max Collections </th>
+            <th scope="col">Fine in Rupees. </th>
+            <th scope="col">Recent Collections </th>
+        </tr>
+      </thead>
+      <tbody>
+        <% allstudents.forEach(student => { %>
+           <tr>  
+          <td><%= student.crn %></td>  
+          <td><%= student.name%></td>  
+          <td><%= student.class %></td> 
+          <td><%= student.mob %></td>  
+          <td><%= student.maxbook %></td>  
+          <td><%= student.fine %></td>  
+          <td><%student.recent_books.forEach(book=>{%>
+            <ul style="display: inline-flex">
+              <li  ><%=book%></li>
+              </ul>
+              <%}); %>
+            </td>  
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+     <% }  
+     else if (type==="staffs") { %>
+    <h3>STAFF DATABASE </h3>
+    </div>
+
+    <table id="myTable" class="table table-striped" >  
+    <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Mobile No. </th>
+            <th scope="col">Password</th>
+            <th scope="col">Post </th>
+          
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <% allstaffs.forEach(staff => { %>
+           <tr>  
+            <td><%= staff.staffcrn %></td>  
+          <td><%= staff.staffname %></td>  
+          <td><%= staff.email %></td> 
+          <td><%= staff.staffmob %></td>  
+          <td><%= staff.password %></td>  
+          <td><%= staff.role %></td>  
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+     <% }  
+
+       else { %>
+        <h3>RESEARCH-PAPER  ON RETURN</h3>
+    </div>
+    <table id="myTable" class="table table-striped" >  
+        <thead>
+        <tr>
+          <th scope="col">Research Paper Id</th>
+          <th scope="col">Research Paper Name</th>
+          <th scope="col">Research Paper Author</th>
+          <th scope="col">Research Paper Price</th>
+          <th scope="col">Quantity</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        <% researchpapers.forEach(rp => { %>
+           <tr>  
+            <td><%= rp.student.name %></td>  
+          <td><%= rp.material.material_id %></td>  
+          <td><%= rp.material.material_name %></td> 
+          <td><%= rp.issue_date %></td>  
+          <td><%= rp.return_date %></td>  
+        </tr>  
+        <%}); %>
+       
+        
+      </tbody>
+    </table>
+     <% } %>
+
+    
+        
+<script>
+$(document).ready(function(){
+    $('#myTable').dataTable();
+});
+</script>
+<%- include("partials/footer.ejs") %>
+</body>
+</html>  

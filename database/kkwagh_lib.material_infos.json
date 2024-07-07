@@ -1,0 +1,364 @@
+[{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f478"
+  },
+  "material_id": "eng1",
+  "material_type": "Book",
+  "material_name": "MongoDB: The Definitive Guide",
+  "material_author": "Kristina Chodorow",
+  "material_price": 120,
+  "material_users": [
+    121121028,
+    121121028,
+    121121028
+  ],
+  "material_count": 0
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f479"
+  },
+  "material_id": "eng2",
+  "material_type": "Book",
+  "material_name": "MongoDB in Action",
+  "material_author": "Kyle Banker",
+  "material_price": 130,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47a"
+  },
+  "material_id": "eng3",
+  "material_type": "Book",
+  "material_name": "Practical MongoDB: Architecting, Developing, and Administering MongoDB",
+  "material_author": "Shakuntala Gupta Edward and Navin Sabharwal",
+  "material_price": 140,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47b"
+  },
+  "material_id": "eng4",
+  "material_type": "Book",
+  "material_name": "MongoDB Applied Design Patterns",
+  "material_author": "Rick Copeland",
+  "material_price": 135,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47c"
+  },
+  "material_id": "eng5",
+  "material_type": "Book",
+  "material_name": "MongoDB Cookbook",
+  "material_author": "Amol Nayak",
+  "material_price": 128,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47d"
+  },
+  "material_id": "eng6",
+  "material_type": "Book",
+  "material_name": "Learning MongoDB",
+  "material_author": "Doug Bierer",
+  "material_price": 122,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47e"
+  },
+  "material_id": "eng7",
+  "material_type": "Book",
+  "material_name": "Scaling MongoDB",
+  "material_author": "Kristina Chodorow",
+  "material_price": 130,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f47f"
+  },
+  "material_id": "eng8",
+  "material_type": "Book",
+  "material_name": "MongoDB: Building on Windows",
+  "material_author": "Dhruv Gami",
+  "material_price": 125,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f480"
+  },
+  "material_id": "eng9",
+  "material_type": "Book",
+  "material_name": "MongoDB Basics",
+  "material_author": "Mr. Michael Sullivan",
+  "material_price": 120,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f481"
+  },
+  "material_id": "eng10",
+  "material_type": "Book",
+  "material_name": "Beginning MongoDB",
+  "material_author": "Peter Membrey",
+  "material_price": 128,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f482"
+  },
+  "material_id": "eng11",
+  "material_type": "Magazine",
+  "material_name": "MongoDB Magazine",
+  "material_author": "MongoDB Team",
+  "material_price": 110,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f483"
+  },
+  "material_id": "eng12",
+  "material_type": "Magazine",
+  "material_name": "Database Trends and Applications Magazine",
+  "material_author": "Various Authors",
+  "material_price": 108,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f484"
+  },
+  "material_id": "eng13",
+  "material_type": "Magazine",
+  "material_name": "SQL Server Pro Magazine",
+  "material_author": "SQL Server Pro Team",
+  "material_price": 112,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f485"
+  },
+  "material_id": "eng14",
+  "material_type": "Magazine",
+  "material_name": "Database Journal Magazine",
+  "material_author": "Database Journal Team",
+  "material_price": 109,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f486"
+  },
+  "material_id": "eng15",
+  "material_type": "Magazine",
+  "material_name": "Big Data Quarterly Magazine",
+  "material_author": "Big Data Quarterly Team",
+  "material_price": 111,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f487"
+  },
+  "material_id": "eng16",
+  "material_type": "Magazine",
+  "material_name": "NoSQL Weekly Magazine",
+  "material_author": "NoSQL Weekly Team",
+  "material_price": 107,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f488"
+  },
+  "material_id": "eng17",
+  "material_type": "Magazine",
+  "material_name": "DZone Database Magazine",
+  "material_author": "DZone Database Team",
+  "material_price": 108,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f489"
+  },
+  "material_id": "eng18",
+  "material_type": "Magazine",
+  "material_name": "Data Science Central Magazine",
+  "material_author": "Data Science Central Team",
+  "material_price": 109,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48a"
+  },
+  "material_id": "eng19",
+  "material_type": "Magazine",
+  "material_name": "Information Management Magazine",
+  "material_author": "Information Management Team",
+  "material_price": 110,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48b"
+  },
+  "material_id": "eng20",
+  "material_type": "Magazine",
+  "material_name": "Database Trends and Technologies Magazine",
+  "material_author": "Database Trends and Technologies Team",
+  "material_price": 112,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48c"
+  },
+  "material_id": "eng21",
+  "material_type": "Research Paper",
+  "material_name": "A Comparison of NoSQL Database Management Systems and Models",
+  "material_author": "Leavitt, Neal",
+  "material_price": 100,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48d"
+  },
+  "material_id": "eng22",
+  "material_type": "Research Paper",
+  "material_name": "Design of a Document-Oriented Database",
+  "material_author": "Mike Curtiss and Erik Christensen",
+  "material_price": 105,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48e"
+  },
+  "material_id": "eng23",
+  "material_type": "Research Paper",
+  "material_name": "Evaluating NoSQL for Big Data",
+  "material_author": "Daniel Abadi",
+  "material_price": 110,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f48f"
+  },
+  "material_id": "eng24",
+  "material_type": "Research Paper",
+  "material_name": "NoSQL Databases",
+  "material_author": "Carlo Strozzi",
+  "material_price": 100,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f490"
+  },
+  "material_id": "eng25",
+  "material_type": "Research Paper",
+  "material_name": "A Survey of Distributed Database Management Systems",
+  "material_author": "Ozsu, M. Tamer, and Valduriez, Patrick",
+  "material_price": 105,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f491"
+  },
+  "material_id": "eng26",
+  "material_type": "Research Paper",
+  "material_name": "Adaptive Query Processing",
+  "material_author": "Amol Deshpande and Samuel Madden",
+  "material_price": 100,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f492"
+  },
+  "material_id": "eng27",
+  "material_type": "Research Paper",
+  "material_name": "Storage and Querying Issues in Object-Oriented Databases",
+  "material_author": "Elisa Bertino and Barbara Catania",
+  "material_price": 105,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f493"
+  },
+  "material_id": "eng28",
+  "material_type": "Research Paper",
+  "material_name": "A Review on NoSQL Database Security",
+  "material_author": "Arindam Paul and Sourav Mazumder",
+  "material_price": 100,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f494"
+  },
+  "material_id": "eng29",
+  "material_type": "Research Paper",
+  "material_name": "Consistency Models in Non-Relational Databases",
+  "material_author": "Roy, Iman, and Hitesh Ballani",
+  "material_price": 102,
+  "material_users": [],
+  "material_count": 3
+},
+{
+  "_id": {
+    "$oid": "65398cf06296ad1c1478f495"
+  },
+  "material_id": "eng30",
+  "material_type": "Research Paper",
+  "material_name": "Performance Evaluation of NoSQL Databases",
+  "material_author": "Abrar Haider and Jochen Seitz",
+  "material_price": 101,
+  "material_users": [],
+  "material_count": 3
+}]

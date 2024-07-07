@@ -1,0 +1,210 @@
+
+<%- include("partials/header.ejs") %>
+<body>
+    
+    
+              <!-- this is new nav bar -->
+              <nav class="navbar bg-body-tertiary fixed-top" style="display: inline;">
+                  <div class="container-fluid">
+                   
+                    <button class="navbar-toggler " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">WELCOME &emsp; <%= name %> !</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/staff/?username=<%= name %>&role=<%= position %>">Dashboard</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link" href="/issue/?username=<%= name %>&role=<%= position%>">Issue/Return</a>
+                            </li>
+                            <% if (position=="administrator") { %>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/administrator/?username=<%= name %>&role=<%= position%>">Administrator</a>
+                              </li> 
+                           <% } %> 
+                          
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Settings
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="/contact/?username=<%= name %>&role=<%= position%>">Contact-us</a></li>
+                              <li><a class="dropdown-item"  href="/">LogOut</a></li>
+                              <!-- <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            </ul>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                    <p class="navbar-brand">K.K WAGH LIBRARY MANAGEMENT </p>
+                    <form class="d-flex mt-1" role="search">
+                      <button class="btn btn-outline-success" type="submit" style="margin-right: 15px;"><a class="nav-link" href="/studstaff/?username=<%= name %>&role=<%= position%>&type=staffs">Staff</a></button>
+                      <button class="btn btn-outline-success" type="submit"><a class="nav-link" href="/studstaff/?username=<%= name %>&role=<%= position%>&type=students">Students</a></button>
+
+                    </form>
+                  </div>
+               
+                </nav>
+        
+            
+                <!-- dashboard -->
+                
+                <div class="row row-cols-1 row-cols-md-3 mb-3 mt-5 text-center" style="margin-left: 20px; margin-right: 20px; padding-top: 70px;">
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Current shelf count</h4>
+                          </div>
+                          <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><%= total %></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                              <li>BOOKS -<%= totalbooks %></li>
+                              <li>MAGAZINES -<%= totalmagazines %></li>
+                              
+                              <li>RESEARCH PAPER -<%= totalresearchpapers %></li>
+                            </ul>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/getbooks/?username=<%= name %>&role=<%= position%>&type=books">Books</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/getbooks/?username=<%= name %>&role=<%= position%>&type=magazines">Magazines</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/getbooks/?username=<%= name %>&role=<%= position%>&type=researchpapers">Research Paper</a></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Issued </h4>
+                          </div>
+                          <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><%= totalissued %></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                              <li>BOOKS -<%= issuedbooks %></li>
+                              <li>MAGAZINES -<%= issuedmagazines %></li>
+                              
+                              <li>RESEARCH PAPER -<%= issuedresearchpapers %></li>
+                            </ul>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/issued/?username=<%= name %>&role=<%= position%>&type=books">Books</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/issued/?username=<%= name %>&role=<%= position%>&type=magazines">Magazines</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/issued/?username=<%= name %>&role=<%= position%>&type=researchpapers">Research Paper</a></button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Remaining Return</h4>
+                          </div>
+                          <div class="card-body">
+                            <h1 class="card-title pricing-card-title"><%= totalremaining %></h1>
+                            <ul class="list-unstyled mt-3 mb-4">
+                              <li>BOOKS -<%= remainingb %></li>
+                              <li>MAGAZINES -<%= remainingm %></li>
+                              
+                              <li>RESEARCH PAPER -<%= remainingr %></li>
+                            </ul>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/remain/?username=<%= name %>&role=<%= position%>&type=books">Books</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/remain/?username=<%= name %>&role=<%= position%>&type=magazines">Magazines</a></button>
+                            <button type="button" class="w-30 btn btn-lg btn-primary"> <a class="nav-link" href="/remain/?username=<%= name %>&role=<%= position%>&type=researchpapers">Research Paper</a></button>
+                          </div>
+                        </div>
+                      </div>
+                    <div class="col">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">additional as per requirements of Library</h4>
+                          </div>
+                          <div class="card-body">
+                        <form method="get" > 
+                            <ul class="list-unstyled mt-3 mb-4">
+                                <li>
+                                    
+                
+                                         <h1 class="h3 mb-3 fw-normal"></h1>
+                            
+                                              
+                                                  <label for="book">CRN no.</label>
+                                                    <input type="text"  id=" book" placeholder="Book name" >
+                                               
+                               
+                
+                                 </li>
+                                
+                            </ul>
+                                 <button type="button" class="w-100 btn btn-lg btn-primary">Search User</button>
+                         </form>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-8">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">Recent Logs</h4>
+                          </div>
+                          <div class="card-body">
+                           
+                            <!-- <ul class="list-unstyled mt-3 mb-4">
+                              <li>30 users included</li>
+                              <li>15 GB of storage</li>
+                              <li>Phone and email support</li>
+                              <li>Help center access</li>
+                            </ul> -->
+                            <% if (allhistory.length > 0) { %>
+                              
+                            <div class="table-responsive small">
+                              <table class="table table-striped table-sm">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">Student CRN</th>
+                                    <th scope="col">Borrower Name</th>
+                                    <th scope="col">Book ID</th>
+                                    <th scope="col">Book Name</th>
+                                    <th scope="col">Issue Date</th>
+                                    <th scope="col">Return Date</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  
+                                  <% for (let i = (allhistory.length) - 1; i >= (allhistory.length) - 4; i--) { %>
+                                    <tr>
+                                      <td><%= allhistory[i]?.material?.material_name %></td>
+                                      <td><%= allhistory[i]?.material?.material_id %></td>
+                                      <td><%= allhistory[i]?.material?.material_type %></td>
+                                      <td><%= allhistory[i]?.issue_date %></td>
+                                    </tr>
+                                  <% } %>
+                                  
+                                  
+                                  
+                                   else { %>
+                                      <h4>No record</h4>
+
+                                  <% } %>
+                                 
+                                
+                                  
+                          
+                                  
+                                </tbody>
+                              </table>
+                            </div>
+                            <button type="button" class="w-100 btn btn-lg btn-primary"><a class="nav-link" href="/gethistory/?username=<%= name %>&role=<%= position%>&type=all">Show more</a></button>
+                          </div>
+                        </div>
+                      </div>
+                      
+                  </div>
+
+
+ <%- include("partials/footer.ejs") %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

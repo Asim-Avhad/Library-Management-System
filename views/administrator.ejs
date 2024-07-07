@@ -1,0 +1,509 @@
+
+<%- include("partials/header.ejs") %>
+ <body>
+    
+    
+              <!-- this is new nav bar -->
+              <nav class="navbar bg-body-tertiary fixed-top" style="display: inline;">
+                  <div class="container-fluid">
+                   
+                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+                      <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">ADMINISTRATION </h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                      </div>
+                      <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                          <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="/staff/?username=<%= name %>&role=<%= position %>">Dashboard</a>
+                          </li>
+                          <li class="nav-item">
+                              <a class="nav-link"  href="/issue/?username=<%= name %>&role=<%= position%>">Issue/Return</a>
+                            </li>
+                            <% if (position=="administrator") { %>
+                              <li class="nav-item">
+                                <a class="nav-link" href="/administrator/?username=<%= name %>&role=<%= position%>">Administrator</a>
+                              </li> 
+                           <% } %> 
+                          <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Settings
+                            </a>
+                            <ul class="dropdown-menu">
+                              <li><a class="dropdown-item" href="#">Contact-us</a></li>
+                              <li><a class="dropdown-item"  href="/">LogOut</a></li>
+                              <!-- <li>
+                                <hr class="dropdown-divider">
+                              </li>
+                              <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            </ul>
+                          </li>
+                        </ul>
+                        
+                      </div>
+                    </div>
+                    <p class="navbar-brand">K.K WAGH LIBRARY ADMINISTRATION BOARD</p>
+                    <form class="d-flex mt-1" role="search">
+                      <input class="form-control me-2" type="search" placeholder="book name" aria-label="Search">
+                      <button class="btn btn-outline-success" type="submit">Search</button>
+                    </form>
+                  </div>
+               
+                </nav>
+        
+            
+                <!-- dashboard -->
+                
+                <div class="row row-cols-1 row-cols-md-3 mb-3 mt-5 text-center" style="margin-left: 20px; margin-right: 20px; padding-top: 70px;">
+                  
+                    <div class="col" style="width:50%; margin-bottom: 20px;">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">ADD  COLLECTION</h4>
+                          </div>
+                          <div class="card-body">
+                           
+                            <!-- const materialSchema=new mongoose.Schema({
+                              material_id:String,
+                              material_type:String,
+                              material_name:String,
+                              material_author:String,
+                              material_price:Number,
+                              material_users:Array
+                            }) -->
+                           <div class="container">
+                            <main>
+                          
+                        
+                                
+                                <div class="col-md-7 col-lg-10">
+                                     <form style="text-align:left; font-weight:bolder"  action="/administrator/addBook/?username=<%= name %>&role=<%= position %>" method="POST">
+                                    <div class="row g-3">
+                                      <div class="col-sm-6">
+                                        <label for="material_type" class="form-label">Collection Type</label>
+                                        <input type="text" class="form-control" id="material_type" placeholder="Book/Magazine/ResearchPaper" name="material_type" required >
+                                        
+                                      </div>
+                          
+                                      <div class="col-sm-6">
+                                        <label for="material_id" class="form-label">Collection ID</label>
+                                        <input type="text" class="form-control" id="material_id" placeholder="enter valid material id" name="material_id"  required >
+                                        
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="materu=ial_name" class="form-label">Material Name</label>
+                                       
+                                        
+                                          <input type="text" class="form-control" id="materu=ial_name" placeholder="Name"  name="material_name" required >
+                                       
+                                      </div>
+                          
+                                      <div class="col-sm-6">
+                                        <label for="material_author" class="form-label">Author</label>
+                                        <input type="text" class="form-control" id="material_author" placeholder="Author name" name="material_author"  required >
+                                        
+                                      </div>
+                                     
+                                      <div class="col-6">
+                                        <label for="material_price" class="form-label">Collection Price</label>
+                                       
+                                        
+                                          <input type="int" class="form-control" id="material_price" placeholder="Price"  name="material_price"  required>
+                                       
+                                      </div>
+  
+                                     
+                          
+                                      <div class="col-12">
+                                        <!-- <label for="address" class="form-label">Address</label>
+                                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="" fdprocessedid="jp1zv">
+                                        <div class="invalid-feedback">
+                                          Please enter your shipping address.
+                                        </div> -->
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <!-- <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
+                                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" fdprocessedid="07haqr"> -->
+                                      </div>
+                          
+                          
+                                    </div>
+                                    <hr class="my-4">
+                          
+                                    <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="issue" >ADD</button>
+                                  </form>
+                                </div>
+                              <!-- </div> -->
+                            </main>
+                          
+                           
+                          </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                   
+                    <div class="col" style="width: 50%;">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">REMOVE COLLECTION</h4>
+                          </div>
+                          <div class="card-body">
+                       
+                         <div class="container">
+                          <main>
+                        
+                            <!-- <div class="row g-5"> -->
+                              
+                              <div class="col-md-7 col-lg-10">
+                                <form style="text-align:left; font-weight:bolder" action="/administrator/removeBook/?username=<%= name %>&role=<%= position %>" method="POST">
+                                  <div class="row g-3">
+                                    <div class="col-sm-6">
+                                      <label for="material_type" class="form-label">Collection Type</label>
+                                      <input type="text" class="form-control" id="material_type" placeholder="Book/Magazine/ResearchPaper" name="material_type" required >
+                                      
+                                    </div>
+                        
+                                    <div class="col-sm-6">
+                                      <label for="material_id" class="form-label">Collection ID</label>
+                                      <input type="text" class="form-control" id="material_id" placeholder="enter valid material id" name="material_id"  required >
+                                      
+                                    </div>
+                        
+                                    <div class="col-12">
+                                      <label for="materu=ial_name" class="form-label">Collection Name</label>
+                                     
+                                      
+                                        <input type="text" class="form-control" id="materu=ial_name" placeholder="Name"  name="material_name"  >
+                                     
+                                    </div>
+                        
+                                    <div class="col-sm-6">
+                                      <label for="material_author" class="form-label">Author</label>
+                                      <input type="text" class="form-control" id="material_author" placeholder="Author name" name="material_author"  >
+                                      
+                                    </div>
+                                   
+                               
+                        
+                        
+                                  </div>
+                                  <hr class="my-4">
+                                  
+                                  <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="return" >REMOVE</button>
+                                </form>
+                              </div>
+                            <!-- </div> -->
+                          </main>
+                        
+                         
+                        </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+
+                      <!-- new STUDENT -->
+                      <div class="col" style="width:50%; margin-bottom: 20px;">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">ADD STUDENT</h4>
+                          </div>
+                          <div class="card-body">
+                           
+                           
+                           <div class="container">
+                            <main>
+                        
+                              <!-- const studentSchema=new mongoose.Schema({
+                                name:String,
+                                class:String,
+                                crn:Number,
+                                mob:String,
+                                fine:Number,
+                                maxbook:Number,
+                                recent_books:Array
+                              })  -->
+                                
+                                <div class="col-md-7 col-lg-10">
+                                     <form style="text-align:left; font-weight:bolder"  action="/administrator/addStudent/?username=<%= name %>&role=<%= position %>" method="POST">
+                                    <div class="row g-3">
+                                      <div class="col-sm-6">
+                                        <label for="crn" class="form-label">Student CRN</label>
+                                        <input type="number" class="form-control" id="crn" placeholder="enter your CRN here" name="student_crn" required >
+                                        
+                                      </div>
+                          
+                                      <div class="col-sm-6">
+                                        <label for="student_name" class="form-label">Name</label>
+                                        <input type="text" class="form-control" id="student_name" placeholder="student name" name="student_name"  required >
+                                        
+                                      </div>
+                          
+                                      <div class="col-12">
+                                        <label for="student_class" class="form-label">Student Class</label>
+                                       
+                                        
+                                          <input type="text" class="form-control" id="student_class" placeholder="Eg:- TE_CSD"  name="student_class" required >
+                                       
+                                      </div>
+                          
+                                      <div class="col-sm-6">
+                                        <label for="mobile_number" class="form-label">Mobile Number</label>
+                                        <input type="text" class="form-control" id="mobile_number" placeholder="Eg: +91 934423xxxx" name="student_mobile"  required >
+                                        
+                                      </div>
+                                  
+                                    </div>
+                                    <hr class="my-4">
+                          
+                                    <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="issue" >ADD</button>
+                                  </form>
+                                </div>
+                              <!-- </div> -->
+                            </main>
+                          
+                           
+                          </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end -->
+                      <!-- remove student -->
+                      <div class="col" style="width:50%; margin-bottom: 20px;">
+                        <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                          <div class="card-header py-3 text-bg-primary border-primary">
+                            <h4 class="my-0 fw-normal">REMOVE STUDENT</h4>
+                          </div>
+                          <div class="card-body">
+                           
+                           
+                           <div class="container">
+                            <main>
+                          
+                        
+                                
+                                <div class="col-md-7 col-lg-10">
+                                     <form style="text-align:left; font-weight:bolder"  action="/administrator/removeStudent/?username=<%= name %>&role=<%= position %>" method="POST">
+                                      <div class="row g-3">
+                                        <div class="col-sm-6">
+                                          <label for="crn" class="form-label">Student CRN</label>
+                                          <input type="number" class="form-control" id="crn" placeholder="enter your CRN here" name="student_crn" required >
+                                          
+                                        </div>
+                            
+                                        <div class="col-sm-6">
+                                          <label for="student_name" class="form-label">Name</label>
+                                          <input type="text" class="form-control" id="student_name" placeholder="student name" name="student_name"   >
+                                          
+                                        </div>
+                            
+                                        <div class="col-12">
+                                          <label for="student_class" class="form-label">Student Class</label>
+                                         
+                                          
+                                            <input type="text" class="form-control" id="student_class" placeholder="Eg:- TE_CSD"  name="student_class"  >
+                                         
+                                        </div>
+                            
+                                        <div class="col-sm-6">
+                                          <label for="mobile_number" class="form-label">Mobile Number</label>
+                                          <input type="text" class="form-control" id="mobile_number" placeholder="Eg: +91 934423xxxx" name="student_mobile"   >
+                                          
+                                        </div>
+                                    
+                                      </div>
+                                      <hr class="my-4">
+                          
+                                    <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="issue" >REMOVE</button>
+                                  </form>
+                                </div>
+                              <!-- </div> -->
+                            </main>
+                          
+                           
+                          </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+                      <!-- end -->
+<!-- add staff -->
+<div class="col" style="width:50%; margin-bottom: 20px;">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-bg-primary border-primary">
+        <h4 class="my-0 fw-normal">ADD STAFF</h4>
+      </div>
+      <div class="card-body">
+       
+       
+       <div class="container">
+        <main>
+      
+    
+            
+            <div class="col-md-7 col-lg-10">
+                 <form style="text-align:left; font-weight:bolder"  action="/administrator/addStaff/?username=<%= name %>&role=<%= position %>" method="POST">
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <!-- staffname: 'patil',
+          staffcrn: 102,
+          email: 'patil@gmail.com',
+          staffmob: '+91 9424324325',
+          password: 'patil@123',
+          role: 'administrator' -->
+                    <label for="crn" class="form-label">Staff CRN</label>
+                    <input type="number" class="form-control" id="crn" placeholder="admin(101-200) / staff(201-300)" name="staff_crn" required >
+                    
+                  </div>
+      
+                  <div class="col-sm-6">
+                    <label for="bookid" class="form-label">Staff Name</label>
+                    <input type="text" class="form-control" id="bookid" placeholder="Name" name="staff_name"  required >
+                    
+                  </div>
+      
+                  <div class="col-12">
+                    <label for="student_name" class="form-label">Staff email</label>
+                   
+                    
+                      <input type="text" class="form-control" id="student_name" placeholder="abc@kkwagh.edu.in"  name="staff_email" required  >
+                   
+                  </div>
+      
+                  <div class="col-sm-6">
+                    <label for="class" class="form-label">Staff Password</label>
+                    <input type="text" class="form-control" id="class" placeholder="Password" name="password"  required >
+                    
+                  </div>
+                 
+                  <div class="col-6">
+                    <label for="mobile_number" class="form-label">Mobile Number</label>
+                   
+                    
+                      <input type="text" class="form-control" id="mobile_number" placeholder="Eg:  +91 87834xxxx"  name="mobile_number"  required>
+                   
+                  </div>
+
+                  <div class="col-6">
+                    <label for="mobile_number" class="form-label">Staff Position</label>
+                   
+                    
+                      <input type="text" class="form-control" id="mobile_number" placeholder="Eg:  administrator/staff"  name="staff_position" required >
+                   
+                  </div>
+
+    
+                </div>
+                <hr class="my-4">
+      
+                <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="issue" >ADD</button>
+              </form>
+            </div>
+          <!-- </div> -->
+        </main>
+      
+       
+      </div>
+        
+      </div>
+    </div>
+  </div>
+<!-- remove staff -->
+<div class="col" style="width:50%; margin-bottom: 20px;">
+    <div class="card mb-4 rounded-3 shadow-sm border-primary">
+      <div class="card-header py-3 text-bg-primary border-primary">
+        <h4 class="my-0 fw-normal">REMOVE STAFF</h4>
+      </div>
+      <div class="card-body">
+       
+       
+       <div class="container">
+        <main>
+      
+    
+            
+            <div class="col-md-7 col-lg-10">
+                 <form style="text-align:left; font-weight:bolder"  action="/administrator/removeStaff/?username=<%= name %>&role=<%= position %>" method="POST">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <!-- staffname: 'patil',
+            staffcrn: 102,
+            email: 'patil@gmail.com',
+            staffmob: '+91 9424324325',
+            password: 'patil@123',
+            role: 'administrator' -->
+                      <label for="crn" class="form-label">Staff CRN</label>
+                      <input type="number" class="form-control" id="crn" placeholder="admin(101-200) / staff(201-300)" name="staff_crn" required >
+                      
+                    </div>
+        
+                    <div class="col-sm-6">
+                      <label for="bookid" class="form-label">Staff Name</label>
+                      <input type="text" class="form-control" id="bookid" placeholder="Name" name="staff_name"   >
+                      
+                    </div>
+        
+                    <div class="col-12">
+                      <label for="student_name" class="form-label">Staff email</label>
+                     
+                      
+                        <input type="text" class="form-control" id="student_name" placeholder="Eg:- abc@kkwagh.edu.in"  name="staff_email"  >
+                     
+                    </div>
+        
+                    <div class="col-sm-6">
+                      <label for="class" class="form-label">Staff Password</label>
+                      <input type="text" class="form-control" id="class" placeholder="password" name="staff_password"  required >
+                      
+                    </div>
+                   
+                    <div class="col-6">
+                      <label for="mobile_number" class="form-label">Mobile Number</label>
+                     
+                      
+                        <input type="text" class="form-control" id="mobile_number" placeholder="Eg:  +91 87834xxxx"  name="mobile_number"  >
+                     
+                    </div>
+  
+                    <div class="col-6">
+                      <label for="mobile_number" class="form-label">Staff Position</label>
+                     
+                      
+                        <input type="text" class="form-control" id="mobile_number" placeholder="Eg:  administrator/staff"  name="staff_position"  >
+                     
+                    </div>
+  
+          
+                  </div>
+                  <hr class="my-4">
+        
+      
+                <button class="w-35 btn btn-primary btn-lg " type="submit" style="margin-left: 45%;" name="submit_type" value="issue" >REMOVE</button>
+              </form>
+            </div>
+          <!-- </div> -->
+        </main>
+      
+       
+      </div>
+        
+      </div>
+    </div>
+  </div>
+            <!-- END       -->
+    </div>
+
+ <%- include("partials/footer.ejs") %>
+
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+</body>
+</html>

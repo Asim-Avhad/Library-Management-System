@@ -1,0 +1,24 @@
+[{
+  "_id": {
+    "$oid": "6538c1e5242dde3d628bf63c"
+  },
+  "staffname": "patil",
+  "staffcrn": 102,
+  "email": "patil@gmail.com",
+  "staffmob": "+91 9424324325",
+  "password": "patil@123",
+  "role": "administrator",
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6539faaad34769b1a52b05cf"
+  },
+  "staffname": "girase",
+  "staffcrn": 201,
+  "email": "girae@23",
+  "staffmob": "+91 9432343678",
+  "password": "chandgude23",
+  "role": "staff",
+  "__v": 0
+}]

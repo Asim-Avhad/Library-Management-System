@@ -1,0 +1,44 @@
+[{
+  "_id": {
+    "$oid": "653979a9b916b7386a5c086d"
+  },
+  "name": "Jatin Sharad Gade",
+  "class": "TE_CSD",
+  "crn": 121121028,
+  "mob": "+91 9423448443",
+  "fine": 0,
+  "maxbook": 3,
+  "recent_books": [
+    "eng01",
+    "eng1",
+    "eng1",
+    "eng1"
+  ],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "6539f4ae239b9511520d86bb"
+  },
+  "name": "Suyash Ulhas Deshpande",
+  "class": "TE_CSD",
+  "crn": 121121314,
+  "mob": "+91 9552090567",
+  "fine": 0,
+  "maxbook": 3,
+  "recent_books": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "653a00f4b8e07d6a9b171361"
+  },
+  "name": "Mrunmai Bhamre",
+  "class": "TE_CSD",
+  "crn": 121121321,
+  "mob": "+91 9028399667",
+  "fine": 0,
+  "maxbook": 3,
+  "recent_books": [],
+  "__v": 0
+}]
